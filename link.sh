@@ -6,8 +6,12 @@
 # Author Chris Pergrossi
 # GPG License
 
-for F in $(pwd)/\.*; do
-	[ -e "$HOME/$F" ] mv "$HOME/$F" "$HOME/$F.bak"
+for F in \.*; do
+	[[ "$F" == "."  ]] && continue
+	[[ "$F" == ".."  ]] && continue
+	[[ "$F" =~ /\.git/  ]] && continue
+
+	[ -e "$HOME/$F" ] && mv "$HOME/$F" "$HOME/$F.bak"
 
 	ln -s "`pwd`/$F" "$HOME/$F"
 done
