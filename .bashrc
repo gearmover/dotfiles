@@ -141,3 +141,5 @@ colors() {
 
 export GOPATH=$HOME/dev/go
 export PATH=$HOME/dev/go/bin:$PATH
+
+export GO15VENDOREXPERIMENT=1
