@@ -9,7 +9,7 @@
 for F in \.*; do
 	[[ "$F" == "."  ]] && continue
 	[[ "$F" == ".."  ]] && continue
-	[[ "$F" =~ /\.git/  ]] && continue
+	[[ "$F" =~ \.git  ]] && continue
 
 	[ -e "$HOME/$F" ] && mv "$HOME/$F" "$HOME/$F.bak"
 
