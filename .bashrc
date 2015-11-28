@@ -143,3 +143,6 @@ export GOPATH=$HOME/dev/go
 export PATH=$HOME/dev/go/bin:$PATH
 
 export GO15VENDOREXPERIMENT=1
+
+alias moff="xinput --disable $(xinput | grep TouchPad | grep  -o -e 'id=[0-9]*' | cut -d= -f2)"
+alias mon="xinput --enable $(xinput | grep TouchPad | grep  -o -e 'id=[0-9]*' | cut -d= -f2)"
