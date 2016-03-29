@@ -146,3 +146,9 @@ export GO15VENDOREXPERIMENT=1
 
 alias moff="xinput --disable $(xinput | grep TouchPad | grep  -o -e 'id=[0-9]*' | cut -d= -f2)"
 alias mon="xinput --enable $(xinput | grep TouchPad | grep  -o -e 'id=[0-9]*' | cut -d= -f2)"
+
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi
